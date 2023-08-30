@@ -5,7 +5,6 @@
 package hectorJogo;
 
 import hectorJogo.Modelo.Fase;
-import hectorJogo.Modelo.Player;
 import javax.swing.JFrame;
 
 /**
@@ -27,8 +26,6 @@ public class Base extends JFrame {
         new Base();
     }
 
-    private void add(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
     
 }
