@@ -41,17 +41,16 @@ public class Fase extends JPanel implements ActionListener{
     public void paint (Graphics g){
         Graphics2D graficos = (Graphics2D) g;
         graficos.drawImage(fundo, 0, 0, null);
-        graficos.drawImage(player.getImage(), player.getX(), player.getY(), this);
-        g.dispose();
+        graficos.drawImage(player.getImage(), player.getXm(), player.getYm(), this);
 
         List<Tiro> tiros = player.getTiros();
         for(int i = 0; i< tiros.size(); i++ ){
-           Tiro m = tiros.get(i);
-           m.load();
-           graficos.drawImage(m.getImagem(), m.getX(), m.getY(), this);
+           Tiro n = tiros.get(i);
+           n.load();
+           graficos.drawImage(n.getImagem(), n.getX(), n.getY(), this);
                 }
 
-
+        g.dispose();
     }
 
     @Override
@@ -61,7 +60,7 @@ public class Fase extends JPanel implements ActionListener{
        List<Tiro> tiros = player.getTiros();
         for(int i = 0; i< tiros.size();i++){
             Tiro m = tiros.get(i);
-                if (m.getIsvisible()){
+                if (m.Isvisible() == true){
                     m.update();
                 }else{
                     tiros.remove(i);

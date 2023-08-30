@@ -21,18 +21,17 @@ public class Player {
     private int altura ,largura;
     private List <Tiro> tiros;
     
-
-
     public Player(){
     this.x = 100;
     this.y = 100;
-
     tiros = new ArrayList<Tiro>();
 
 }
     public void roupa(){
         ImageIcon personagem = new ImageIcon("imagens\\Python.png");
         imagem = personagem.getImage();
+
+
         altura = imagem.getHeight(null);
         largura = imagem.getWidth(null);
     }
@@ -50,19 +49,18 @@ public class Player {
         int botao = tecla.getKeyCode();
         if (botao == KeyEvent.VK_SPACE){
             tiroSimples();
-            System.out.println("Funciona desgraça");
         }
         if (botao == KeyEvent.VK_UP){
-            dy = -8;
+            dy = -3;
         }
         else if(botao == KeyEvent.VK_DOWN){
-            dy = 8;
+            dy = 3;
         }
         else if (botao == KeyEvent.VK_RIGHT){
-            dx = 8;
+            dx = 3;
         }
         else if (botao == KeyEvent.VK_LEFT){
-            dx = -8;
+            dx = -3;
         }
         
     }
@@ -89,10 +87,10 @@ public class Player {
     public Image getImage(){
         return imagem;
     }    
-    public int getX(){
+    public int getXm(){
         return x;
     }     
-    public int getY(){
+    public int getYm(){
         return y;
     }     
     public List<Tiro> getTiros(){

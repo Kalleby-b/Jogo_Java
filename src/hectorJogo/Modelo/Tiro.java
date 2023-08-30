@@ -15,7 +15,8 @@ import javax.swing.ImageIcon;
  */
 public class Tiro {
     private Image imagem;
-    private int x, y, largura, altura;
+    private int x1, y1;
+    private int largura, altura;
     private boolean inVisivel;
     
     private static final int LARGURA = 938;
@@ -23,35 +24,41 @@ public class Tiro {
     
     
     public Tiro(int x, int y){
-        this.x = x;
-        this.y = y;
+        this.x1 = x;
+        this.y1 = y;
         inVisivel = true;
     }
+
+
     public void load(){
-        ImageIcon referencia = new ImageIcon("imagens\\Tiro.png");
+        ImageIcon referencia = new ImageIcon("imagens\\TiroSimples.png");
         imagem = referencia.getImage();
 
         this.largura = imagem.getWidth(null);
         this.altura = imagem.getHeight(null);
     }
-    public void update(){
-        this.x += VELOCIDADE;
 
-        if(this.x > LARGURA){
+
+    public void update(){
+        this.x1 += VELOCIDADE;
+        if(this.x1 > LARGURA){
             inVisivel = false;
         }
+
+
     }
 
+
     public  int getX(){
-        return x;
+        return x1;
     }
     public  int getY(){
-        return y;
+        return y1;
     }
-    public boolean getIsvisible(){
+    public boolean Isvisible(){
         return inVisivel ;
     }
-    public void setinVisivel(boolean inVisivel){
+    public void setVisivel(boolean inVisivel){
         this.inVisivel = inVisivel;
     }
     public static int getVELOCIDADE(){
