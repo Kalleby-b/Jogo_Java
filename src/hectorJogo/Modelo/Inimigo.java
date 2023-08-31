@@ -5,26 +5,27 @@
 package hectorJogo.Modelo;
 
 import java.awt.Image;
-import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
+
+import java.awt.Rectangle;
 
 
 /**
  *
  * @author user
  */
-public class Tiro {
+public class Inimigo {
     private Image imagem;
     private int x1, y1;
     private int largura, altura;
     private boolean inVisivel;
     
-    private static final int LARGURA = 938;
+    //private static final int LARGURA = 938;
     private static int VELOCIDADE = 2;
     
     
-    public Tiro(int x, int y){
+    public Inimigo(int x, int y){
         this.x1 = x;
         this.y1 = y;
         inVisivel = true;
@@ -32,7 +33,7 @@ public class Tiro {
 
 
     public void load(){
-        ImageIcon referencia = new ImageIcon("imagens\\TiroSimples.png");
+        ImageIcon referencia = new ImageIcon("imagens\\Java.png");
         imagem = referencia.getImage();
 
         this.largura = imagem.getWidth(null);
@@ -41,13 +42,13 @@ public class Tiro {
 
 
     public void update(){
-        this.x1 += VELOCIDADE;
-        if(this.x1 > LARGURA){
+        this.x1 -= VELOCIDADE;
+        /*if(this.x1 > LARGURA){
             inVisivel = false;
-        }
+        }*/
+
 
     }
-
     public Rectangle getBount(){
         return new Rectangle(x1, y1, largura, altura);
     }

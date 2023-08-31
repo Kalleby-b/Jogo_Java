@@ -11,6 +11,8 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 
+import java.awt.Rectangle;
+
 /**
  *
  * @author user
@@ -20,11 +22,14 @@ public class Player {
     private Image imagem;
     private int altura ,largura;
     private List <Tiro> tiros;
-    
+    private boolean IsVisible;
+
+
     public Player(){
     this.x = 100;
     this.y = 100;
     tiros = new ArrayList<Tiro>();
+    IsVisible = true;
 
 }
     public void roupa(){
@@ -43,6 +48,10 @@ public class Player {
 
     public void tiroSimples(){
         this.tiros.add(new Tiro(x + largura, y + (altura/2)));
+    }
+
+    public Rectangle getBount(){
+        return new Rectangle(x, y, largura, altura);
     }
 
     public void teclaPressionada(KeyEvent tecla){
@@ -95,5 +104,11 @@ public class Player {
     }     
     public List<Tiro> getTiros(){
         return tiros;
+    }
+    public boolean getIsvisivel(){
+        return IsVisible;
+    }
+    public void setVisivel(boolean isVisible){
+        IsVisible = isVisible;
     }
 }
