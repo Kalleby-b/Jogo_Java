@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
  *
  * @author user
  */
-public class Tiro {
+public class TiroBoss {
     private Image imagem;
     private int x1, y1;
     private int largura, altura;
@@ -24,7 +24,7 @@ public class Tiro {
     private static int VELOCIDADE = 4;
     
     
-    public Tiro(int x, int y){
+    public TiroBoss(int x, int y){
         this.x1 = x;
         this.y1 = y;
         inVisivel = true;
@@ -32,7 +32,7 @@ public class Tiro {
 
 
     public void load(){
-        ImageIcon referencia = new ImageIcon("imagens\\TiroSimples.png");
+        ImageIcon referencia = new ImageIcon("imagens\\TiroSimplesInimigo.png");
         imagem = referencia.getImage();
 
         this.largura = imagem.getWidth(null);
@@ -41,7 +41,7 @@ public class Tiro {
 
 
     public void update(){
-        this.x1 += VELOCIDADE;
+        this.x1 -= VELOCIDADE;
         if(this.x1 > LARGURA){
             inVisivel = false;
         }

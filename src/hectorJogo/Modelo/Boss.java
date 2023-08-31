@@ -17,23 +17,23 @@ import java.awt.Rectangle;
  *
  * @author user
  */
-public class Player {
-    private int x ,y, dx, dy;
+public class Boss {
+    private int x ,y, dy;
     private Image imagem;
     private int altura ,largura;
-    private List <Tiro> tiros;
+    private List <TiroBoss> tros;
     private boolean IsVisible;
+    
 
-
-    public Player(){
-    this.x = 100;
-    this.y = 100;
-    tiros = new ArrayList<Tiro>();
+    public Boss(){
+    this.x = 800;
+    this.y = 500;
+    tros = new ArrayList<TiroBoss>();
     IsVisible = true;
 
 }
     public void roupa(){
-        ImageIcon personagem = new ImageIcon("imagens\\Python.png");
+        ImageIcon personagem = new ImageIcon("imagens\\Boss.png");
         imagem = personagem.getImage();
 
 
@@ -42,38 +42,32 @@ public class Player {
     }
 
     public void mover(){
-        x += dx;
         y+= dy;
     }
 
     public void tiroSimples(){
-        this.tiros.add(new Tiro(x + largura, y + (altura/2)));
+        this.tros.add(new TiroBoss(x + (largura/2), y + (altura/2)));
     }
 
     public Rectangle getBount(){
         return new Rectangle(x, y, largura, altura);
     }
 
-    public void teclaPressionada(KeyEvent tecla){
+    public void teclaPressionad(KeyEvent tecla){
         int botao = tecla.getKeyCode();
         if (botao == KeyEvent.VK_SPACE){
             tiroSimples();
         }
         if (botao == KeyEvent.VK_UP){
-            dy = -3;
+            dy = 9;
         }
         else if(botao == KeyEvent.VK_DOWN){
-            dy = 3;
-        }
-        else if (botao == KeyEvent.VK_RIGHT){
-            dx = 3;
-        }
-        else if (botao == KeyEvent.VK_LEFT){
-            dx = -3;
+            dy = -9;
         }
         
+        
     }
-    public void teclaLivre(KeyEvent tecla){
+    public void teclaLivr(KeyEvent tecla){
         int botao = tecla.getKeyCode();
         
         if (botao == KeyEvent.VK_UP){
@@ -82,13 +76,7 @@ public class Player {
         else if(botao == KeyEvent.VK_DOWN){
             dy = 0;
         }
-        else if (botao == KeyEvent.VK_RIGHT){
-            dx = 0;
-        }
-        else if (botao == KeyEvent.VK_LEFT){
-            dx = 0;
-    
-        }
+       
         
     
     }
@@ -102,19 +90,13 @@ public class Player {
     public int getYm(){
         return y;
     }     
-    public List<Tiro> getTiros(){
-        return tiros;
+    public List<TiroBoss> getTiros(){
+        return tros;
     }
     public boolean getIsvisivel(){
         return IsVisible;
     }
     public void setVisivel(boolean isVisible){
         IsVisible = isVisible;
-    }
-    public int getdXm(){
-        return dx;
-    }     
-    public int getdYm(){
-        return dy;
     }
 }

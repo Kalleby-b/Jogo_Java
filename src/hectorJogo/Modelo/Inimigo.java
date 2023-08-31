@@ -22,7 +22,7 @@ public class Inimigo {
     private boolean inVisivel;
     
     //private static final int LARGURA = 938;
-    private static int VELOCIDADE = 2;
+    private static int VELOCIDADE = 5;
     
     
     public Inimigo(int x, int y){
